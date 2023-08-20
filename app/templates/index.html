@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Country Information Web Service</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Country Information Web Service</h1>
+    
+    <form id="search-form">
+        <label for="country_name">Enter Country Name:</label>
+        <input type="text" id="country_name" name="country_name" required>
+        <button type="submit">Search</button>
+    </form>
+    
+    <div id="country-info"></div>
+    
+    <script>
+        document.getElementById("search-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const countryName = document.getElementById("country_name").value;
+            
+            fetch("/get_country_info", {
+                method: "POST",
+                body: new URLSearchParams({ country_name: countryName }),
+                headers: { "Content-Type": "application/x-www-form-urlencoded" }
+            })
+            .then(response => response.json())
+            .then(data => {
+                const countryInfoDiv = document.getElementById("country-info");
+                if (data.error) {
+                    countryInfoDiv.innerHTML = `<p>${data.error}</p>`;
+                } else {
+                    // Display country information here
+                    // Customize the display as needed
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        });
+    </script>
+</body>
+</html>
