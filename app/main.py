@@ -3,9 +3,6 @@ import requests
 
 app = Flask(__name__)
 
-# API Endpoint for fetching country information from REST Countries API
-REST_COUNTRIES_API = "https://restcountries.com/v3.1/name/{name}?fullText=true"
-
 @app.route("/", methods=["GET"])
 def index():
     return render_template("index.html")
@@ -15,7 +12,7 @@ def get_country_info():
     country_name = request.form.get("country_name")
     
     if country_name:
-        response = requests.get(REST_COUNTRIES_API.format(name=country_name))
+        
         data = response.json()
         
         if data:

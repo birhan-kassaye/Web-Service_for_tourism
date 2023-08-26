@@ -19,7 +19,7 @@ label {
 
 input[type="text"] {
     padding: 5px;
-    width: 
+    vertical-align: center;
     border-radius: 30%;
 }
 
