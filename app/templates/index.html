@@ -8,11 +8,33 @@
     <h1>Country Information Web Service</h1>
     
     <form id="search-form">
-        <label for="country_name">Enter Country Name:</label>
         <input type="text" id="country_name" name="country_name" required>
         <button type="submit">Search</button>
     </form>
     
+    <div id="all-cities"></div>
+    <div id="weather">
+	<label>Weather</label>
+    	<button type="radio">Berha</button>
+	<button type="radio">Kola</button>
+	<button type="radio">Weyna Dega</button>
+	<button type="radio">Dega</button>
+	<button type="checkbox">Wurch</button>
+    </div>
+    <div id="population">
+	<label>Population</label>
+    	<button></button>
+	<button></button>
+	<button></button>
+    </div>
+    <div id="location">
+	<label>Location</label>
+    	<button></button>
+    </div>
+    <div id="region">
+	<label>Region</label>
+	<button></button>
+    </div>
     <div id="country-info"></div>
     
     <script>
@@ -38,5 +60,6 @@
             .catch(error => console.error("Error:", error));
         });
     </script>
+    <footer></footer>
 </body>
 </html>

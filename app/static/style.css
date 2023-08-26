@@ -19,8 +19,75 @@ label {
 
 input[type="text"] {
     padding: 5px;
+    width: 
+    border-radius: 30%;
 }
 
 button {
     padding: 5px 10px;
+}
+
+#all-cities {
+    display: flex;
+    width: 25%;
+    height: 50%;
+    position: absolute;
+    left: 1%;
+    border: 1px solid purple;
+    border-radius: 10px;
+}
+
+#weather {
+    position: absolute;
+    display: flex;
+    left: 28%;
+    width: 15%;
+    height: 20%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#population {
+    display: flex;
+    position: absolute;
+    left: 46%;
+    width: 15%;
+    height: 20%;
+    flex-direction: column;
+}
+
+#location {
+    display: flex;
+    position: absolute;
+    left: 65%;
+    width: 15%;
+    height: 20%;
+    flex-direction: column;
+}
+
+#region {
+    display: flex;
+    position: absolute;
+    left: 82%;
+    width: 15%;
+    height: 20px;
+    flex-direction: column;
+}
+
+#country-info {
+    position: absolute;
+    left: 30%;
+    top: 38%;
+    width: 65%;
+    height: 45%;
+    border: 1px solid purple;
+    border-radius: 10px;
+}
+
+footer {
+    position: absolute;
+    bottom: 5%;
+    width: 96%;
+    height: 7%;
+    border-top: 1px solid purple;
 }
