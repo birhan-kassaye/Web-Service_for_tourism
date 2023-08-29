@@ -12,7 +12,7 @@ classes = {
 class FileStorage:
     """FileStorage Representation"""
 
-    __file = 'file.json'
+    __file = 'app/static/file.json'
     __objects = {}
 
 
