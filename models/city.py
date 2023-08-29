@@ -1,22 +1,19 @@
-from sqlalchemy import Column, String, Integer
-from models.basemodel import BaseModel, Session
+import models
+from models.basemodel import BaseModel
+from models.touristsite import TouristSite
 
 class City(BaseModel):
-    __tablename__ = "cities"
+    def __init__(self, *args, **kwargs):
+        self.name = "No Name"
+        self.weather = "Weyna Dega"
+        self.population = 100000
+        self.region = "Gambella"
+        super().__init__(*args, **kwargs)
 
-    id = Column(Integer, primary_key=True)
-    name = Column(String(100))
-    population = Column(Integer)
-
-    def __init__(self, name, population):
-        self.name = name
-        self.population = population
-
-    def to_dict(self):
-        return {
-            "id": self.id,
-            "name": self.name,
-            "population": self.population
-        }
-
-Base.metadata.create_all(engine)
+    @property
+    def places(self):
+        places = []
+        for i in models.storage.all(TouristSite).values():
+            if i.city_id == self.id:
+                places.append(i.to_dict())
+        return (places)

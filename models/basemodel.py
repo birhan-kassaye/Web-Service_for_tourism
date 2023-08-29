@@ -1,23 +1,55 @@
-from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+#!/usr/bin/python3
+"""BaseModel Definition"""
+from datetime import datetime
+import models
+import uuid
 
-# Database Configuration
-DB_URI = "mysql://username:password@localhost/dbname"
-engine = create_engine(DB_URI)
-Session = sessionmaker(bind=engine)
+time = "%Y-%m-%dT%H:%M:%S.%f"
 
-Base = declarative_base()
+class BaseModel:
+    """BaseModel Representation"""
+    def __init__(self, *args, **kwargs):
+        """Initialization of BaseModel instance"""
+        if kwargs:
+            for key, value in kwargs.items():
+                if key != "__class__":
+                    setattr(self, key, value)
+            if kwargs["created_at"]:
+                self.created_at = datetime.strptime(kwargs["created_at"], time)
+            else:
+                self.created_at = datetime.utcnow()
+            if kwargs.get("updated_at", None)  and type(self.updated_at) is str:
+                self.updated_at = datetime.strptime(kwargs["updated_at"], time)
+            else:
+                self.updated_at = datetime.utcnow()
+            if kwargs.get("id", None) is None:
+                self.id = str(uuid.uuid4())
+            else:
+                self.id = kwargs.get("id")
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.utcnow()
+            self.updated_at = self.created_at
 
-class BaseModel(Base):
-    __abstract__ = True
 
-    def save_to_db(self):
-        session = Session()
-        session.add(self)
-        session.commit()
+    def save(self):
+        """updates the attribute 'updated_at' with the current datetime"""
+        self.updated_at = datetime.utcnow()
+        models.storage.new(self)
+        models.storage.save()
 
-    def delete_from_db(self):
-        session = Session()
-        session.delete(self)
-        session.commit()
+    def to_dict(self):
+        """returns a dictionary containing all keys/values of the instance"""
+        new_dict = self.__dict__.copy()
+        if "created_at" in new_dict:
+            new_dict["created_at"] = new_dict["created_at"].strftime(time)
+        if "updated_at" in new_dict:
+            new_dict["updated_at"] = new_dict["updated_at"].strftime(time)
+        new_dict["__class__"] = self.__class__.__name__
+        if "_sa_instance_state" in new_dict:
+            del new_dict["_sa_instance_state"]
+        return new_dict
+
+    def delete(self):
+        """delete the current instance from the storage"""
+        models.storage.delete(self)
