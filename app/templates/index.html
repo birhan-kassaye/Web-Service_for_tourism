@@ -8,7 +8,10 @@
     <script src="static/script/filters.js" type="text/javascript"></script>
 </head>
 <body>
-    <h1>Country Information Web Service</h1>
+    <header>
+	<h1>Country Information Web Service</h1>
+        <button>Contribute</button>
+    </header>
     
     <form id="search-form">
         <input type="text" id="country_name" name="country_name" required>
@@ -16,38 +19,40 @@
     </form>
     
     <div id="all-cities">
-	<ol></ol>
+	<nav>
+	    <ol></ol>
+	</nav>
     </div>
     <section>
-    <div id="weather">
-	    <label>Weather</label>
-	    <input type="checkbox" class="weatheroption" data-name="Bereha">Bereha</input>
-	    <input type="checkbox" class="weatheroption" data-name="Kola">Kola</input>
-        <input type="checkbox" class="weatheroption" data-name="Weyna_Dega">Weyna Dega</input>
-    	<input type="checkbox" class="weatheroption" data-name="Dega">Dega</input>
-	    <input type="checkbox" class="weatheroption">Wurch</input>
-    </div>
-    <div id="population">
-	    <label>Population</label>
-    	    <input type="checkbox" class="checkoption"></input>
-	    <input type="checkbox" class="checkoption"></input>
-	    <input type="checkbox" class="checkoption"></input>
-	    <input type="checkbox" class="checkoption"></input>
-    </div>
-    <div id="location">
-	    <label>Location</label>
-    	    <input type="checkbox" class="locationoption"></input>
-	    <input type="checkbox" class="locationoption"></input>
-	    <input type="checkbox" class="locationoption"></input>
-	    <input type="checkbox"class="locationoption"></input>
-    </div>
-    <div id="region">
-	    <label>Region</label>
-	    <input type="checkbox" class="regionoption"></input>
-	    <input type="checkbox" class="regionoption"></input>
-	    <input type="checkbox" class="regionoption"></input>
-	    <input type="checkbox" class="regionoption"></input>
-    </div>
+        <div id="weather">
+            <label>Weather</label>
+            <input type="checkbox" class="weatheroption" data-name="weather" data-value="Bereha">Bereha</input>
+            <input type="checkbox" class="weatheroption" data-name="weather" data-value="Kola">Kola</input>
+            <input type="checkbox" class="weatheroption" data-name="weather" data-value="Weyna Dega">Weyna Dega</input>
+            <input type="checkbox" class="weatheroption" data-name="weather" data-value="Dega">Dega</input>
+            <input type="checkbox" class="weatheroption">Wurch</input>
+        </div>
+        <div id="population">
+            <label>Population</label>
+                <input type="checkbox" class="checkoption"></input>
+            <input type="checkbox" class="checkoption"></input>
+            <input type="checkbox" class="checkoption"></input>
+            <input type="checkbox" class="checkoption"></input>
+        </div>
+        <div id="location">
+            <label>Location</label>
+                <input type="checkbox" class="locationoption"></input>
+            <input type="checkbox" class="locationoption"></input>
+            <input type="checkbox" class="locationoption"></input>
+            <input type="checkbox"class="locationoption"></input>
+        </div>
+        <div id="region">
+            <label>Region</label>
+            <input type="checkbox" class="regionoption"></input>
+            <input type="checkbox" class="regionoption"></input>
+            <input type="checkbox" class="regionoption"></input>
+            <input type="checkbox" class="regionoption"></input>
+        </div>
     </section>
     <div id="results"></div>
     <footer></footer>    

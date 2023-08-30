@@ -3,6 +3,35 @@ body {
     font-family: Arial, sans-serif;
 }
 
+header {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 5px;
+    border-bottom: 1px solid purple;
+    justify-content: space-between;
+}
+
+header h1 {
+    position: relative;
+    top: 5px;
+    left: 10px;
+    justify-content: flex-start;
+    color: purple;
+    margin: 0;
+    padding-bottom: 15px;
+}
+
+header button {
+    position: relative;
+    width: 20%;
+    height: 33%;
+    background-color: purple;
+    color: white;
+    font-size: 20px;
+    border: none;
+    margin-bottom: 10px;
+}
+
 h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -18,23 +47,42 @@ label {
 }
 
 input[type="text"] {
+    position: relative;
+    top: 15px;
     padding: 5px;
     vertical-align: center;
-    border-radius: 30%;
+    border-radius: 10px;
+    width: 35%;
 }
 
 button {
+    position: relative;
+    top: 15px;
     padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: purple;
+    color: white;
+    width: 15%;
+    font-size: 20px;
+    margin-left: 15px;
 }
 
 #all-cities {
     display: flex;
     width: 25%;
-    height: 50%;
+    height: 510px;
     position: absolute;
     left: 1%;
     border: 1px solid purple;
     border-radius: 10px;
+}
+
+#all-cities nav ol {
+    height: 95%;
+    width: 125%;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 #weather {
@@ -77,9 +125,9 @@ button {
 #results {
     position: absolute;
     left: 30%;
-    top: 38%;
+    top: 45%;
     width: 65%;
-    height: 45%;
+    height: 35%;
     border: 1px solid purple;
     border-radius: 10px;
 }
@@ -87,7 +135,7 @@ button {
 footer {
     position: absolute;
     bottom: 5%;
-    width: 96%;
+    width: 99%;
     height: 7%;
     border-top: 1px solid purple;
 }
