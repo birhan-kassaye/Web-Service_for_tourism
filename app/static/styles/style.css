@@ -74,7 +74,7 @@ button {
     flex-direction: column;
 }
 
-#country-info {
+#results {
     position: absolute;
     left: 30%;
     top: 38%;
