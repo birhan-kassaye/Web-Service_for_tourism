@@ -43,38 +43,6 @@ h1 {
    text-align: center;
 }
 
-h2 {
-   text-align: center;
-}
-
-.container {
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   width: 100%;
-   height: 100%;
-}
-
-#touristsites {
-   border: 1px solid purple;
-   position: relative;
-   left: 2%;
-   width: 25%;
-   height: 95%;
-}
-
-#fullInfo {
-   border: 1px solid purple;
-   position: relative;
-   margin-left: 10%;
-   width: 50%;
-   height: 95%;
-}
-
-ol {
-   list-style: none;
-}
-
 footer {
     position: absolute;
     bottom: 5%;

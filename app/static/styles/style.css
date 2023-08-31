@@ -25,7 +25,7 @@ header form {
     position: relative;
     width: 20%;
     height: 33%;
-    background-color: purple;
+    background-color: transparent;
     color: white;
     font-size: 20px;
     border: none;
@@ -36,6 +36,7 @@ header form input {
    color: white;
    background-color: purple;
    font-size: 20px;
+   width: 100%;
    border: none;
 }
 
@@ -88,9 +89,24 @@ button {
 
 #all-cities nav ol {
     height: 95%;
-    width: 125%;
+    width: 100%;
     overflow: hidden;
     overflow-y: scroll;
+}
+
+#all-cities li {
+    background-color: white;
+    padding: 10px 10px 10px 10px;
+    list-style: none;
+}
+
+#all-cities a {
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
 }
 
 #weather {

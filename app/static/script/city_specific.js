@@ -4,7 +4,9 @@ $('document').ready(function () {
     for (i in list) {
       if (list[i]['__class__'] == 'TouristSite'){
 	let name = list[i]['name'];
-      	$('#touristsites ol').append('<li>' + name + '</li>')
+	if (list[i]['city_id'] == $('#touristsites').attr('city_id')) {
+      	  $('#touristsites ol').append('<li>' + name + '</li>')
+        }
       }
     }
   });

@@ -4,7 +4,7 @@ $('document').ready( function () {
     for (i in info) {
       if (info[i]['__class__'] == 'City'){
         let name = info[i]['name'];
-        $("#all-cities ol").append('<li>' + name +'</li>');
+        $("#all-cities ol").append('<li><a href="/' + name + '">' + name +'</a></li>');
       }
     }
   });

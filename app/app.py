@@ -18,12 +18,14 @@ def index():
                         region = i['region']
                         weather = i['weather']
                         population = i['population']
+                        ids = i['id']
 
                         return render_template("city_specific.html",
                                                city=city,
                                                region=region,
                                                weather=weather,
-                                               population=population)
+                                               population=population,
+                                               ids=ids)
                     else:
                         pass
                 else:
@@ -47,14 +49,17 @@ def get_city_info(city):
                     region = i['region']
                     weather = i['weather']
                     population = i['population']
+                    ids = i['id']
 
                     return render_template("city_specific.html", 
                                             city=city,
                                             region=region,
                                             weather=weather,
-                                            population=population)
+                                            population=population,
+                                            ids=ids)
                 else:
                     pass
+                    
             else:
                 pass
         return jsonify({'error': 'not found'})

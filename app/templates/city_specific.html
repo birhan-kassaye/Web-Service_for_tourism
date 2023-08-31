@@ -17,7 +17,7 @@
     	</header>
 	<h1>{{ city }}</h1>
 	<div class="container">
-	   <div id="touristsites">
+		<div id="touristsites" city_id="{{ ids }}">
 		<h2>Places Available</h2>
 		<ol></ol>
 	   </div>
@@ -28,8 +28,10 @@
 		       <li><b>Weather</b>:  {{ weather }}</li>
 		       <li><b>Region</b>:  {{ region }}</li>
 		       <li><b>Population</b>: {{ population }}</li>
+		       <li><b>ID</b>: {{ ids }}</li>
 	       </ol>
 	   </div>
 	</div>
+	<footer></footer>
 </body>
 </html>
