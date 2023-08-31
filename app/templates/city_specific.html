@@ -5,8 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ city }}</title>
     <link rel="stylesheet" href="static/styles/city_specific.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="static/script/city_specific.js"></script>
 </head>
 <body>
+	<header>
+           <h1>Cities Tourist Site Web Service</h1>
+	   <form method="get" action="/contribute">
+        	<input type="submit" value="Contribute"/>
+	   </form>
+    	</header>
 	<h1>{{ city }}</h1>
+	<div class="container">
+	   <div id="touristsites">
+		<h2>Places Available</h2>
+		<ol></ol>
+	   </div>
+	   <div id="fullInfo">
+	       <h2>General Information</h2>
+	       <ol>
+		       <li><b>Name</b>:  {{ city }}</li>
+		       <li><b>Weather</b>:  {{ weather }}</li>
+		       <li><b>Region</b>:  {{ region }}</li>
+		       <li><b>Population</b>: {{ population }}</li>
+	       </ol>
+	   </div>
+	</div>
 </body>
 </html>

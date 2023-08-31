@@ -15,7 +15,15 @@ def index():
             for i in data.values():
                 if i['__class__'] == 'City':
                     if i['name'] == city:
-                        return render_template("city_specific.html", city=city)
+                        region = i['region']
+                        weather = i['weather']
+                        population = i['population']
+
+                        return render_template("city_specific.html",
+                                               city=city,
+                                               region=region,
+                                               weather=weather,
+                                               population=population)
                     else:
                         pass
                 else:
@@ -36,7 +44,15 @@ def get_city_info(city):
         for i in data.values():
             if i['__class__'] == 'City':
                 if i['name'] == city: 
-                    return render_template("city_specific.html", city=city)
+                    region = i['region']
+                    weather = i['weather']
+                    population = i['population']
+
+                    return render_template("city_specific.html", 
+                                            city=city,
+                                            region=region,
+                                            weather=weather,
+                                            population=population)
                 else:
                     pass
             else:
@@ -45,6 +61,12 @@ def get_city_info(city):
 
     else:
         return jsonify({'error': 'not found'})
+
+
+@app.route("/contribute", methods=["GET"])
+def contribute():
+    return render_template("contribute.html")
+
 
 
 if __name__ == "__main__":

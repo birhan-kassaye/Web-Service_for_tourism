@@ -21,7 +21,7 @@ header h1 {
     padding-bottom: 15px;
 }
 
-header button {
+header form {
     position: relative;
     width: 20%;
     height: 33%;
@@ -30,6 +30,13 @@ header button {
     font-size: 20px;
     border: none;
     margin-bottom: 10px;
+}
+
+header form input {
+   color: white;
+   background-color: purple;
+   font-size: 20px;
+   border: none;
 }
 
 h1 {
