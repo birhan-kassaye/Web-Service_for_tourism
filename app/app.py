@@ -1,23 +1,51 @@
 from flask import Flask, render_template, request, jsonify
+import json
 import requests
 
 app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def index():
-    return render_template("index.html")
+    if request.args:
+        city = request.args.get('city_name')
+        if city:
+            with open('static/file.json') as f:
+                data = json.load(f)
 
-@app.route("/get_country_info", methods=["POST"])
-def get_country_info():
-    if country_name:
-        response = requests.get(REST_COUNTRIES_API.format(name=country_name))
-        data = response.json()
+            for i in data.values():
+                if i['__class__'] == 'City':
+                    if i['name'] == city:
+                        return render_template("city_specific.html", city=city)
+                    else:
+                        pass
+                else:
+                    pass
+            return jsonify({'error': "not found"})
+        else:
+            return jsonify({'error': 'not found'})
 
-        if data:
-            country_info = data[0]
-            return jsonify(country_info)
+    else:
+        return render_template("index.html")
+
+@app.route("/<city>", methods=["GET"])
+def get_city_info(city):
+    if city:
+        with open('static/file.json') as f:
+            data = json.load(f)
+
+        for i in data.values():
+            if i['__class__'] == 'City':
+                if i['name'] == city: 
+                    return render_template("city_specific.html", city=city)
+                else:
+                    pass
+            else:
+                pass
+        return jsonify({'error': 'not found'})
+
     else:
         return jsonify({'error': 'not found'})
+
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=5000)
