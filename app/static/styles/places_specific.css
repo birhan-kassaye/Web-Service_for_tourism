@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+header{
+    position: relative;
+    display: flex;
+    height: calc(5rem + 2vh);
+    border-bottom: 1px solid purple;
+}
+header h1{
+    position: absolute;
+    font-size: calc(2vh + 0.75rem);
+    left: 2rem;
+    top: 2rem;
+    width:fit-content;
+    color: purple;
+    cursor: default;
+}
+
+header nav{
+    position: absolute;
+    right: 1rem;
+    display: flex;
+    top: 3rem;
+    width: 20%;
+    cursor: pointer;
+    background-color: purple;
+    justify-content: center;
+    color: white;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: calc(2vh + 1rem);
+    border-top: 1px solid purple;
+    background-color: none;
+}
+
+#container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 45%;
+    padding-top: 15px;
+    background-color: none;
+}
+
+#container h1 {
+    text-align: center;
+    width: 100%;
+    color:brown;
+    background-color: transparent;
+}
+
+.fullinfo{
+    position: absolute;
+    top: calc(20px + 4rem);
+    width: 30vw;
+    height: 33vh;
+    background-color: aqua;
+    left: 2vh;
+    border: 1px solid purple;
+    border-radius: 10px;
+}
+
+.fullinfo-mob{
+    position: absolute;
+    display: none;
+    top: calc(20px + 4rem);
+    width: 85vw;
+    height: 33vh;
+    background-color: aqua;
+    left: 8vw;
+    border: 1px solid purple;
+    border-radius: 10px;
+}
+
+.imgcontainer{
+    position: absolute;
+    top: calc(20px + 4rem);
+    width: 55vw;
+    right: 3vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 50vh;
+    background-color: aqua;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-y: scroll;
+    border: 1px solid purple;
+}
+
+.imgcontainer-mob{
+    position: absolute;
+    display: none;
+    top: calc(4rem + 39vh);
+    width: 85vw;
+    left: 8vw;
+    height: 50vh;
+    background-color: aqua;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    border: 1px solid purple;
+}
+
+.details{
+    position: absolute;
+    display: flex;
+    top: calc(39vh + 4rem);
+    width: 30vw;
+    left: 2vh;
+    height: 33vh;
+    background-color: green;
+    color: antiquewhite;
+    text-align: center;
+}
+
+.details-mob {
+    position: absolute;
+    display: none;
+    top: calc(4rem + 95vh);
+    width: 85vw;
+    left: 8vw;
+    height: 33vh;
+    background-color: green;
+    color: antiquewhite;
+    text-align: center;
+}

@@ -68,6 +68,34 @@ def get_city_info(city):
         return jsonify({'error': 'not found'})
 
 
+@app.route("/<city>/<site>", methods=["GET"])
+def getsiteinfo(city, site):
+    if city and site:
+        with open('static/file.json') as f:
+            data = json.load(f)
+        for i in data.values():
+            if i['__class__'] == 'City':
+                if i['name'] == city:
+                    for j in data.values():
+                        if j['__class__'] == 'TouristSite':
+                            if j['name'] == site:
+                                return render_template('places_specific.html',
+                                                        site=site,
+                                                        city=city)
+                            else:
+                                pass
+                        else:
+                            pass
+                else:
+                    pass
+            else:
+                pass
+        return jsonify({'error': 'not found'})
+
+    else:
+        return jsonify({'error': 'not found'})
+
+
 @app.route("/contribute", methods=["GET"])
 def contribute():
     return render_template("contribute.html")

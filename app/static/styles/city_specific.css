@@ -6,29 +6,31 @@ header {
     display: flex;
     flex-direction: row;
     padding-bottom: 5px;
+    height: 6vh;
     border-bottom: 1px solid purple;
     justify-content: space-between;
 }
 
 header h1 {
-    position: relative;
-    top: 5px;
-    left: 10px;
-    justify-content: flex-start;
-    color: purple;
-    margin: 0;
-    padding-bottom: 15px;
+   position: relative;
+   top: 5px;
+   left: 10px;
+   justify-content: flex-start;
+   color: purple;
+   margin: 0;
+   padding-bottom: 15px;
 }
 
 header form {
-    position: relative;
-    width: 20%;
-    height: 33%;
-    background-color: transparent;
-    color: white;
-    font-size: 20px;
-    border: none;
-    margin-bottom: 10px;
+   position: relative;
+   width: 20%;
+   height: 33%;
+   background-color: transparent;
+   color: white;
+   font-size: 20px;
+   border: none;
+   margin-bottom: 10px;
+    
 }
 
 header form input {
@@ -58,17 +60,28 @@ h2 {
 #touristsites {
    border: 1px solid purple;
    position: relative;
-   left: 2%;
-   width: 25%;
-   height: 95%;
+   left: 3rem;
+   top: 2rem;
+   width: 25vw;
+   height: 60vh;
 }
 
 #fullInfo {
    border: 1px solid purple;
    position: relative;
-   margin-left: 10%;
-   width: 50%;
-   height: 95%;
+   top: 2rem;
+   margin-right: 3rem;
+   left: 4rem;
+   width: 50vw;
+   height: inherit;
+}
+
+#touristsites ol {
+   position: relative;
+   height: 50%;
+   width: 70%;
+   overflow: hidden;
+   overflow-y: scroll;
 }
 
 ol {
@@ -76,10 +89,10 @@ ol {
 }
 
 footer {
-    position: absolute;
-    bottom: 5%;
+    position: fixed;
+    bottom: 0%;
     width: 99%;
-    height: 7%;
+    height: 5vh;
     border-top: 1px solid purple;
 }
 

@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100%;
 }
 
 header {
@@ -39,15 +48,148 @@ header form input {
    border: none;
 }
 
-h1 {
+div h1 {
+    margin-top: 20px;
    text-align: center;
+   background-color: none;
 }
 
-footer {
-    position: absolute;
-    bottom: 5%;
-    width: 99%;
-    height: 7%;
+/*footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 5vh;
     border-top: 1px solid purple;
+    background-color: wheat;
+}
+*/
+
+#container {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   height: 300vh;
+   padding-top: 15px;
+   background-color: none;
 }
 
+.page-1 {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    top: 10vh;
+    left: 5vw;
+    right: 5vw;
+    gap: 15vw;
+    height: 45vh;
+    background-color: none;
+    padding-bottom: 3vh;
+    border: 1px solid purple;
+    border-radius: 15px;
+}
+
+.page-1 .ask-1 {
+    position: absolute;
+    top: 12vw;
+    text-align: center;
+    font-size: 3vw;
+    font-weight: bold;
+    font-style: oblique;
+}
+
+.page-1 .city {
+    background-color: none;
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+
+.page-1 .touristsite {
+    background-color: none;
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+
+.page-1 .city form {
+    width: inherit;
+    height: 5vh;
+}
+
+.page-1 .city input{
+    width: inherit;
+    height: 5vh;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(182, 31, 182);
+    font-size: 2.5vw;
+    color: wheat;
+    font-weight: bold;
+}
+
+.page-1 .touristsite form {
+    width: inherit;
+    height: 5vh;
+}
+
+.page-1 .touristsite input{
+    width: inherit;
+    height: 5vh;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(182, 31, 182);
+    font-size: 2.5vw;
+    color: wheat;
+    font-weight: bold;
+}
+
+.page-1 .touristsite input:hover{
+    background-color: rgb(209, 40, 252);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.page-1 .city input:hover{
+    background-color: rgb(207, 55, 245);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#page-2{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 30vh;
+    top: 75vh;
+    left: 5vw;
+    right: 5vw;
+    gap: 15vw;
+    height: 75vh;
+    background-color: none;
+    padding-bottom: 3vh;
+    border: 1px solid purple;
+    border-radius: 15px;
+}
+
+#page-3{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    top: 190vh;
+    left: 5vw;
+    right: 5vw;
+    gap: 15vw;
+    height: 75vh;
+    background-color: none;
+    margin-top: 15vh;
+    margin-bottom: 3vh;
+    border: 1px solid purple;
+    border-radius: 15px;
+}
