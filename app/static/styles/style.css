@@ -3,6 +3,43 @@ body {
     font-family: Arial, sans-serif;
 }
 
+header {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 5px;
+    border-bottom: 1px solid purple;
+    justify-content: space-between;
+}
+
+header h1 {
+    position: relative;
+    top: 5px;
+    left: 10px;
+    justify-content: flex-start;
+    color: purple;
+    margin: 0;
+    padding-bottom: 15px;
+}
+
+header form {
+    position: relative;
+    width: 20%;
+    height: 33%;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+header form input {
+   color: white;
+   background-color: purple;
+   font-size: 20px;
+   width: 100%;
+   border: none;
+}
+
 h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -18,23 +55,69 @@ label {
 }
 
 input[type="text"] {
+    position: relative;
+    top: 15px;
     padding: 5px;
     vertical-align: center;
-    border-radius: 30%;
+    border-radius: 10px;
+    width: 35%;
 }
 
 button {
+    position: relative;
+    top: 15px;
     padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: purple;
+    color: white;
+    width: 15%;
+    font-size: 20px;
+    margin-left: 15px;
 }
 
 #all-cities {
     display: flex;
     width: 25%;
-    height: 50%;
+    height: 45%;
     position: absolute;
     left: 1%;
+    top: 23%;
+    background-color: antiquewhite;
     border: 1px solid purple;
     border-radius: 10px;
+}
+
+#all-cities nav{
+    width: 80%;
+}
+
+#all-cities nav ol {
+    height: 95%;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+#all-cities li {
+    background-color: transparent;
+    padding: 10px 10px 10px 1px;
+    list-style: none;
+}
+
+#all-cities a {
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+section #filters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 #weather {
@@ -42,6 +125,7 @@ button {
     display: flex;
     left: 28%;
     width: 15%;
+    padding-top: 1%;
     height: 20%;
     flex-direction: column;
     justify-content: space-between;
@@ -51,6 +135,7 @@ button {
     display: flex;
     position: absolute;
     left: 46%;
+    padding-top: 1%;
     width: 15%;
     height: 20%;
     flex-direction: column;
@@ -59,6 +144,7 @@ button {
 #location {
     display: flex;
     position: absolute;
+    padding-top: 1%;
     left: 65%;
     width: 15%;
     height: 20%;
@@ -70,24 +156,25 @@ button {
     position: absolute;
     left: 82%;
     width: 15%;
-    height: 20px;
+    padding-top: 1%;
+    height: 20%;
     flex-direction: column;
 }
 
-#country-info {
-    position: absolute;
+#results {
+    position:absolute;
     left: 30%;
-    top: 38%;
+    bottom: 15%;
     width: 65%;
-    height: 45%;
+    height: 35%;
     border: 1px solid purple;
     border-radius: 10px;
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 5%;
-    width: 96%;
+    width: 99%;
     height: 7%;
     border-top: 1px solid purple;
 }
