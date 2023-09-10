@@ -8,7 +8,9 @@ from flask import Flask, render_template, make_response, jsonify
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 app.register_blueprint(app_views)
+from flask_cors import CORS
 
+cors = CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 
 @app.teardown_appcontext
 def close_db(error):

@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def index():
+    cities = []
     if request.args:
         city = request.args.get('city_name')
         if city:
