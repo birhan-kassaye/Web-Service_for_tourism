@@ -39,6 +39,11 @@ header nav{
     color: white;
 }
 
+header nav a{
+    color: white;
+    text-decoration: none;
+}
+
 footer {
     position: fixed;
     bottom: 0;

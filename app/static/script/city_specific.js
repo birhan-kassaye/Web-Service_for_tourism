@@ -29,26 +29,28 @@ $('document').ready(function () {
 
   $.ajax( {
     type: 'GET',
-    url: 'http://127.0.0.1:5001/api/v1/allplaces',
+    url: 'http://127.0.0.1:5001/api/v1/all',
     success: function (data) {
       const list = data;
       for (i in list) {
-        let name = list[i]['name'];
-        let city = 'none';
-        if (list[i]['city_id'] == $('#touristsites').attr('city_id')) {
-          for (j in list) {
-            if (list[j]['__class__'] == 'City') {
-              if (list[i]['city_id'] == list[j]['id']){
-                city = list[j]['name'];
-                break;
-              } else {
-                continue;
-              }
-            } else {
-              continue
-            }
-          }
-          $('#touristsites ol').append('<li><a href="/' + city + '/' + name  + '">' + name +'</a></li>');
+        if (list[i]['__class__'] == 'TouristSite'){
+        	let name = list[i]['name'];
+        	let city = 'none';
+        	if (list[i]['city_id'] == $('#touristsites').attr('city_id')) {
+          	for (j in list) {
+            		if (list[j]['__class__'] == 'City') {
+              			if (list[i]['city_id'] == list[j]['id']){
+                			city = list[j]['name'];
+                			break;
+              			} else {
+                			continue;
+              			}
+            		} else {
+              			continue
+            		}
+          	}
+          	$('#touristsites ol').append('<li><a href="/' + city + '/' + name  + '">' + name +'</a></li>');
+        	}
         }
       }
     }

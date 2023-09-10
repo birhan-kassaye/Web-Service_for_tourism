@@ -47,13 +47,23 @@ def get_places(city_id):
 
 
 @app_views.route('/allplaces', methods=['GET'], strict_slashes=False)
-def get_all():
+def get_all_places():
     sites = storage.all(TouristSite)
     places = []
     for site in sites.values():
         places.append(site.to_dict())
 
     return jsonify(places)
+
+
+@app_views.route('/all', methods=['GET'], strict_slashes=False)
+def get_all():
+    allObj = storage.all()
+    allObjs = []
+    for i in allObj.values():
+        allObjs.append(i.to_dict())
+    
+    return jsonify(allObjs)
 
 
 @app_views.route('/city/<city_id>', methods=['DELETE'], strict_slashes=False)
