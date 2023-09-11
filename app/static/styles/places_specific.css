@@ -9,6 +9,7 @@ body{
     font-family: 'Poppins', sans-serif;
     width: 100%;
     height: 100%;
+    background: linear-gradient(135deg,#71b7e6, #9b59b6);
 }
 
 header{
@@ -16,6 +17,7 @@ header{
     display: flex;
     height: calc(5rem + 2vh);
     border-bottom: 1px solid purple;
+    background: white;
 }
 header h1{
     position: absolute;
@@ -51,7 +53,7 @@ footer {
     text-align: center;
     height: calc(2vh + 1rem);
     border-top: 1px solid purple;
-    background-color: none;
+    background-color: white;
 }
 
 #container {
@@ -60,14 +62,12 @@ footer {
     width: 100%;
     height: 45%;
     padding-top: 15px;
-    background-color: none;
 }
 
 #container h1 {
     text-align: center;
     width: 100%;
     color:brown;
-    background-color: transparent;
 }
 
 .fullinfo{
@@ -75,7 +75,7 @@ footer {
     top: calc(20px + 4rem);
     width: 30vw;
     height: 33vh;
-    background-color: aqua;
+    background-color: white;
     left: 2vh;
     border: 1px solid purple;
     border-radius: 10px;
@@ -87,7 +87,7 @@ footer {
     top: calc(20px + 4rem);
     width: 85vw;
     height: 33vh;
-    background-color: aqua;
+    background-color: white;
     left: 8vw;
     border: 1px solid purple;
     border-radius: 10px;
@@ -102,7 +102,7 @@ footer {
     flex-direction: column;
     gap: 0.5rem;
     height: 50vh;
-    background-color: aqua;
+    background-color: white;
     overflow: hidden;
     overflow-y: scroll;
     overflow-y: scroll;
@@ -130,7 +130,7 @@ footer {
     width: 30vw;
     left: 2vh;
     height: 33vh;
-    background-color: green;
+    background-color: white;
     color: antiquewhite;
     text-align: center;
 }

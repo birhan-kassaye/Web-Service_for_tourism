@@ -357,11 +357,15 @@ Page 3
 
 }
 
-#page-3 .container form .city-details .input-box{
+#page-3 .container form .city-details .input-box,
+#page-3 .container form .location-details .input-box,
+#page-3 .container form .place-details .input-box{
     margin-bottom: 15px;
 }
 
-#page-3 .container form .city-details .input-box input{
+#page-3 .container form .city-details .input-box input,
+#page-3 .container form .location-details .input-box input,
+#page-3 .container form .place-details .input-box input{
     height: 45px;
     width: 76%;
     outline: none;
@@ -373,47 +377,50 @@ Page 3
     transition: all 0.3ss ease;
 }
 
-#page-3 .container form .city-details .input-box .details{
+#page-3 .container form .city-details .input-box .details,
+#page-3 .container form .location-details .input-box .details,
+#page-3 .container form .place-details .input-box .details{
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
 #page-3 .container form .city-details .input-box input:focus,
-#page-3 .container form .city-details .input-box input:valid{
+#page-3 .container form .city-details .input-box input:valid,
+#page-3 .container form .location-details .input-box input:focus,
+#page-3 .container form .location-details .input-box input:valid,
+#page-3 .container form .place-details .input-box input:focus,
+#page-3 .container form .place-details .input-box input:valid{
     border-color: #9b59b6;
 }
 
-form .weather-details .weather-title,
-form .population-details .population-title,
-form .region-details .region-title{
+form .type-details .type-title,
+form .price-details .price-title{
     font-size: 20px;
     font-weight: bold;
 }
 
-form .weather-details .category,
-form .population-details .category,
-form .region-details .category{
+form .type-details .category,
+form .price-details .category{
     display: flex;
     width: 80%;
     margin: 14px 0;
     justify-content: space-between;
 }
 
-form .weather-details .category label,
-form .population-details .category label,
-form .region-details .category label{
+form .type-details .category label,
+form .price-details .category label{
     display: flex;
     align-items: center;
 }
 
-form .weather-details .category .dot,
-form .population-details .category .dot,
-form .region-details .category .dot{
+form .price-details .category .dot,
+form .type-details .category .dot{
     height: 18px;
     border-radius: 50%;
     width: 18px;
     margin-right: 10px;
+    margin-left: 15px;
     background: #d9d9d9;
     border: 5px solid transparent;
     transition: all 0.3s ease;
@@ -433,7 +440,17 @@ form .region-details .category .dot{
 #dot-12:checked ~ .category .twelve,
 #dot-13:checked ~ .category .thirteen,
 #dot-14:checked ~ .category .fourteen,
-#dot-15:checked ~ .category .fifteen{
+#dot-15:checked ~ .category .fifteen,
+#dot-16:checked ~ .category .sixteen,
+#dot-17:checked ~ .category .seventeen,
+#dot-18:checked ~ .category .eighteen,
+#dot-19:checked ~ .category .nineteen,
+#dot-20:checked ~ .category .twenty,
+#dot-21:checked ~ .category .twentyone,
+#dot-22:checked ~ .category .twentytwo,
+#dot-23:checked ~ .category .twentythree,
+#dot-24:checked ~ .category .twentyfour,
+#dot-25:checked ~ .category .twentyfive{
     border-color: #d9d9d9;
     background: #9b59b6;
 }
