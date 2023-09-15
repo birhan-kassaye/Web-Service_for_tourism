@@ -1,4 +1,11 @@
 $('document').ready( function () {
+
+  $.ajax({
+    type: 'GET',
+    url: 'http://127.0.0.1:5001/places
+  });
+
+
    readjsonfile = $.getJSON('static/file.json', function (data) {
     const info = data;
     for (i in info) {

@@ -9,6 +9,7 @@ body {
     font-family: 'Poppins', sans-serif;
     width: 100%;
     height: 100%;
+    background: linear-gradient(135deg,#71b7e6, #9b59b6);
 }
 
 header {
@@ -17,6 +18,8 @@ header {
     padding-bottom: 5px;
     border-bottom: 1px solid purple;
     justify-content: space-between;
+    align-items: center;
+    background: white;
 }
 
 header h1 {
@@ -83,7 +86,7 @@ div h1 {
     right: 5vw;
     gap: 15vw;
     height: 45vh;
-    background-color: none;
+    background-color: white;
     padding-bottom: 3vh;
     border: 1px solid purple;
     border-radius: 15px;
@@ -126,7 +129,7 @@ div h1 {
     height: 5vh;
     border-radius: 25px;
     border: none;
-    background-color: rgb(182, 31, 182);
+    background: linear-gradient(135deg,#71b7e6, #9b59b6);
     font-size: 2.5vw;
     color: wheat;
     font-weight: bold;
@@ -142,40 +145,175 @@ div h1 {
     height: 5vh;
     border-radius: 25px;
     border: none;
-    background-color: rgb(182, 31, 182);
+    background: linear-gradient(135deg,#71b7e6, #9b59b6);
     font-size: 2.5vw;
     color: wheat;
     font-weight: bold;
 }
 
 .page-1 .touristsite input:hover{
-    background-color: rgb(209, 40, 252);
+    background: purple;
     font-size: 1.5rem;
     cursor: pointer;
 }
 
 .page-1 .city input:hover{
-    background-color: rgb(207, 55, 245);
+    background: purple;
     font-size: 1.5rem;
     cursor: pointer;
 }
+
+/**
+Page 2
+**/
 
 #page-2{
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     margin-top: 30vh;
     top: 75vh;
     left: 5vw;
     right: 5vw;
     gap: 15vw;
     height: 75vh;
-    background-color: none;
+    background: white;
     padding-bottom: 3vh;
     border: 1px solid purple;
     border-radius: 15px;
 }
+
+#page-2 .container {
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+#page-2 .container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+#page-2 .container .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    background: linear-gradient(135deg,#71b7e6, #9b59b6);
+    width: 30px;
+
+}
+
+#page-2 .container form .city-details .input-box{
+    margin-bottom: 15px;
+}
+
+#page-2 .container form .city-details .input-box input{
+    height: 45px;
+    width: 76%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3ss ease;
+}
+
+#page-2 .container form .city-details .input-box .details{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#page-2 .container form .city-details .input-box input:focus,
+#page-2 .container form .city-details .input-box input:valid{
+    border-color: #9b59b6;
+}
+
+form .weather-details .weather-title,
+form .population-details .population-title,
+form .region-details .region-title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+form .weather-details .category,
+form .population-details .category,
+form .region-details .category{
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+
+form .weather-details .category label,
+form .population-details .category label,
+form .region-details .category label{
+    display: flex;
+    align-items: center;
+}
+
+form .weather-details .category .dot,
+form .population-details .category .dot,
+form .region-details .category .dot{
+    height: 18px;
+    border-radius: 50%;
+    width: 18px;
+    margin-right: 10px;
+    background: #d9d9d9;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .category .one,
+#dot-2:checked ~ .category .two,
+#dot-3:checked ~ .category .three,
+#dot-4:checked ~ .category .four,
+#dot-5:checked ~ .category .five,
+#dot-9:checked ~ .category .nine,
+#dot-6:checked ~ .category .six,
+#dot-7:checked ~ .category .seven,
+#dot-8:checked ~ .category .eight,
+#dot-10:checked ~ .category .ten,
+#dot-11:checked ~ .category .eleven,
+#dot-12:checked ~ .category .twelve,
+#dot-13:checked ~ .category .thirteen,
+#dot-14:checked ~ .category .fourteen,
+#dot-15:checked ~ .category .fifteen{
+    border-color: #d9d9d9;
+    background: #9b59b6;
+}
+#page-2 form input[type="radio"]{
+    display: none;
+}
+
+#page-2 form .button{
+    margin: 45px 0;
+}
+
+#page-2 form .button input{
+    width: 100%;
+    height: 45px;
+    color: #fff;
+    background: linear-gradient(135deg,#71b7e6, #9b59b6);
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    letter-spacing: 1px;
+}
+
+/**
+Page 3
+**/
 
 #page-3{
     position: absolute;
@@ -187,9 +325,152 @@ div h1 {
     right: 5vw;
     gap: 15vw;
     height: 75vh;
-    background-color: none;
+    background-color: white;
     margin-top: 15vh;
     margin-bottom: 3vh;
     border: 1px solid purple;
     border-radius: 15px;
+}
+
+#page-3 .container {
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+#page-3 .container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+#page-3 .container .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    background: linear-gradient(135deg,#71b7e6, #9b59b6);
+    width: 30px;
+
+}
+
+#page-3 .container form .city-details .input-box,
+#page-3 .container form .location-details .input-box,
+#page-3 .container form .place-details .input-box{
+    margin-bottom: 15px;
+}
+
+#page-3 .container form .city-details .input-box input,
+#page-3 .container form .location-details .input-box input,
+#page-3 .container form .place-details .input-box input{
+    height: 45px;
+    width: 76%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3ss ease;
+}
+
+#page-3 .container form .city-details .input-box .details,
+#page-3 .container form .location-details .input-box .details,
+#page-3 .container form .place-details .input-box .details{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#page-3 .container form .city-details .input-box input:focus,
+#page-3 .container form .city-details .input-box input:valid,
+#page-3 .container form .location-details .input-box input:focus,
+#page-3 .container form .location-details .input-box input:valid,
+#page-3 .container form .place-details .input-box input:focus,
+#page-3 .container form .place-details .input-box input:valid{
+    border-color: #9b59b6;
+}
+
+form .type-details .type-title,
+form .price-details .price-title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+form .type-details .category,
+form .price-details .category{
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+
+form .type-details .category label,
+form .price-details .category label{
+    display: flex;
+    align-items: center;
+}
+
+form .price-details .category .dot,
+form .type-details .category .dot{
+    height: 18px;
+    border-radius: 50%;
+    width: 18px;
+    margin-right: 10px;
+    margin-left: 15px;
+    background: #d9d9d9;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .category .one,
+#dot-2:checked ~ .category .two,
+#dot-3:checked ~ .category .three,
+#dot-4:checked ~ .category .four,
+#dot-5:checked ~ .category .five,
+#dot-9:checked ~ .category .nine,
+#dot-6:checked ~ .category .six,
+#dot-7:checked ~ .category .seven,
+#dot-8:checked ~ .category .eight,
+#dot-10:checked ~ .category .ten,
+#dot-11:checked ~ .category .eleven,
+#dot-12:checked ~ .category .twelve,
+#dot-13:checked ~ .category .thirteen,
+#dot-14:checked ~ .category .fourteen,
+#dot-15:checked ~ .category .fifteen,
+#dot-16:checked ~ .category .sixteen,
+#dot-17:checked ~ .category .seventeen,
+#dot-18:checked ~ .category .eighteen,
+#dot-19:checked ~ .category .nineteen,
+#dot-20:checked ~ .category .twenty,
+#dot-21:checked ~ .category .twentyone,
+#dot-22:checked ~ .category .twentytwo,
+#dot-23:checked ~ .category .twentythree,
+#dot-24:checked ~ .category .twentyfour,
+#dot-25:checked ~ .category .twentyfive{
+    border-color: #d9d9d9;
+    background: #9b59b6;
+}
+#page-3 form input[type="radio"]{
+    display: none;
+}
+
+#page-3 form .button{
+    margin: 45px 0;
+}
+
+#page-3 form .button input{
+    width: 100%;
+    height: 45px;
+    color: #fff;
+    background: linear-gradient(135deg,#71b7e6, #9b59b6);
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    letter-spacing: 1px;
 }

@@ -1,5 +1,12 @@
+
+*{
+   margin: 0;
+   padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
 header {
@@ -9,13 +16,14 @@ header {
     height: 6vh;
     border-bottom: 1px solid purple;
     justify-content: space-between;
+    align-items: center;
+    background: white;
 }
 
 header h1 {
    position: relative;
    top: 5px;
    left: 10px;
-   justify-content: flex-start;
    color: purple;
    margin: 0;
    padding-bottom: 15px;
@@ -25,12 +33,11 @@ header form {
    position: relative;
    width: 20%;
    height: 33%;
-   background-color: transparent;
    color: white;
    font-size: 20px;
    border: none;
    margin-bottom: 10px;
-    
+   margin-right: 10px;
 }
 
 header form input {
@@ -43,6 +50,8 @@ header form input {
 
 h1 {
    text-align: center;
+   padding-top: 1vh;
+   margin-bottom: 1vh;
 }
 
 h2 {
@@ -53,6 +62,8 @@ h2 {
    display: flex;
    flex-direction: row;
    flex-wrap: wrap;
+   flex-direction: row;
+   justify-content: space-between;
    width: 100%;
    height: 100%;
 }
@@ -60,6 +71,8 @@ h2 {
 #touristsites {
    border: 1px solid purple;
    position: relative;
+   background: white;
+   padding-top: calc(1vh + 1rem);
    left: 3rem;
    top: 2rem;
    width: 25vw;
@@ -70,16 +83,22 @@ h2 {
    border: 1px solid purple;
    position: relative;
    top: 2rem;
-   margin-right: 3rem;
+   margin-right: 9vw;
+   background: white;
    left: 4rem;
-   width: 50vw;
+   width: calc(45vw + 1rem);
    height: inherit;
+   padding-left: calc(3vw + 1rem);
+   padding-top: calc(1vh + 1rem);
+   padding-bottom: calc(2vh + 1rem);
 }
 
 #touristsites ol {
    position: relative;
    height: 50%;
-   width: 70%;
+   width: calc(width - 4rem);
+   padding-top: 2vh;
+   padding-left: 3vw;
    overflow: hidden;
    overflow-y: scroll;
 }
@@ -90,9 +109,10 @@ ol {
 
 footer {
     position: fixed;
-    bottom: 0%;
-    width: 99%;
-    height: 5vh;
+    bottom: 0;
+    width: 100%;
+    height: calc(2vh + 1rem);
     border-top: 1px solid purple;
+    background: white;
 }
 

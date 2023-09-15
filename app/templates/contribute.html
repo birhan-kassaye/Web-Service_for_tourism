@@ -36,26 +36,205 @@
             </div>
         </div>
         <div id="page-2">
-            <form action="/">
-                <input type="text">
-                <input type="submit">
-            </form>
-            <form action="/">
-                <input type="text" name="" id="">
-                <input type="submit">
-            </form>
+            <div class="container">
+                <div class="title">City Registration</div>
+                <form action="#">
+                    <div class="city-details">
+                        <div class="input-box">
+                            <span class="details">Name</span>
+                            <input type="text" placeholder="Enter the name of the city" name="" id="" required>
+                        </div>
+                    </div>
+                    <div class="population-details">
+                        <input type="radio" name="population" id="dot-1" value="LESS THAN 1K">
+                        <input type="radio" name="population" id="dot-2" value="50K - 100K">
+                        <input type="radio" name="population" id="dot-3" value="100K - 250K">
+                        <input type="radio" name="population" id="dot-4" value="250K - 500K">
+                        <input type="radio" name="population" id="dot-5" value="500K - 1M">
+                        <span class="population-title">Population</span>
+                        <div class="category">
+                            <label for="dot-1">
+                                <span class="dot one"></span>
+                                <span class="population">LESS THAN 1K</span>
+                            </label>
+                            <label for="dot-2">
+                                <span class="dot two"></span>
+                                <span class="population">50K - 100K</span>
+                            </label>
+                            <label for="dot-3">
+                                <span class="dot three"></span>
+                                <span class="population">100K - 250K</span>
+                            </label>
+                            <label for="dot-4">
+                                <span class="dot four"></span>
+                                <span class="population">250K - 500K</span>
+                            </label>
+                            <label for="dot-5">
+                                <span class="dot five"></span>
+                                <span class="population">500K - 1M</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="weather-details">
+                        <input type="radio" name="weather" id="dot-6">
+                        <input type="radio" name="weather" id="dot-7">
+                        <input type="radio" name="weather" id="dot-8">
+                        <input type="radio" name="weather" id="dot-9">
+                        <input type="radio" name="weather" id="dot-10">
+                        <span class="weather-title">Weather</span>
+                        <div class="category">
+                            <label for="dot-6">
+                                <span class="dot six"></span>
+                                <span class="weather">WeynaDega</span>
+                            </label>
+                            <label for="dot-7">
+                                <span class="dot seven"></span>
+                                <span class="weather">Dega</span>
+                            </label>
+                            <label for="dot-8">
+                                <span class="dot eight"></span>
+                                <span class="weather">Kola</span>
+                            </label>
+                            <label for="dot-9">
+                                <span class="dot nine"></span>
+                                <span class="weather">Wurch</span>
+                            </label>
+                            <label for="dot-10">
+                                <span class="dot ten"></span>
+                                <span class="weather">Bereha</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="region-details">
+                        <input type="radio" name="region" id="dot-11">
+                        <input type="radio" name="region" id="dot-12">
+                        <input type="radio" name="region" id="dot-13">
+                        <input type="radio" name="region" id="dot-14">
+                        <input type="radio" name="region" id="dot-15">
+                        <span class="region-title">Region</span>
+                        <div class="category">
+                            <label for="dot-11">
+                                <span class="dot eleven"></span>
+                                <span class="region">Afar</span>
+                            </label>
+                            <label for="dot-12">
+                                <span class="dot twelve"></span>
+                                <span class="region">SNNPR</span>
+                            </label>
+                            <label for="dot-13">
+                                <span class="dot thirteen"></span>
+                                <span class="region">Tigray</span>
+                            </label>
+                            <label for="dot-14">
+                                <span class="dot fourteen"></span>
+                                <span class="region">Oromia</span>
+                            </label>
+                            <label for="dot-15">
+                                <span class="dot fifteen"></span>
+                                <span class="region">Amhara</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <form method="get" action="/add_city">
+                            <input type="submit" value="Add City"/>
+                        </form>
+                    </div>
+                </form>
+            </div>
+            
         </div>
         <div id="page-3">
-            <form action="/">
-                <input type="text">
-                <input type="submit">
-            </form>
-            <form action="/">
-                <input type="text" name="" id="">
-                <input type="submit">
-            </form>
+            <div class="container">
+                <div class="title">Tourist Site Registration</div>
+                <form action="#">
+                    <div class="city-details">
+                        <div class="input-box">
+                            <span class="details">Name</span>
+                            <input type="text" placeholder="Enter the name of the place" name="" id="" required>
+                        </div>
+                    </div>
+                    <div class="location-details">
+                        <div class="input-box">
+                            <span class="details">Location</span>
+                            <input type="text" placeholder="Enter the location of the place" name="" id="" required>
+                        </div>
+                    </div>
+                    <div class="type-details">
+                        <input type="radio" name="type" id="dot-16">
+                        <input type="radio" name="type" id="dot-17">
+                        <input type="radio" name="type" id="dot-18">
+                        <input type="radio" name="type" id="dot-19">
+                        <input type="radio" name="type" id="dot-20">
+                        <span class="type-title">Type</span>
+                        <div class="category">
+                            <label for="dot-16">
+                                <span class="dot sixteen"></span>
+                                <span class="type">Recreational</span>
+                            </label>
+                            <label for="dot-17">
+                                <span class="dot seventeen"></span>
+                                <span class="type">Educational</span>
+                            </label>
+                            <label for="dot-18">
+                                <span class="dot eighteen"></span>
+                                <span class="type">Historical</span>
+                            </label>
+                            <label for="dot-19">
+                                <span class="dot nineteen"></span>
+                                <span class="type">Natural Habitat</span>
+                            </label>
+                            <label for="dot-20">
+                                <span class="dot twenty"></span>
+                                <span class="type">Cultural</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="price-details">
+                        <input type="radio" name="price" id="dot-21">
+                        <input type="radio" name="price" id="dot-22">
+                        <input type="radio" name="price" id="dot-23">
+                        <input type="radio" name="price" id="dot-24">
+                        <input type="radio" name="price" id="dot-25">
+                        <span class="price-title">Pricing</span>
+                        <div class="category">
+                            <label for="dot-21">
+                                <span class="dot twentyone"></span>
+                                <span class="price">Free</span>
+                            </label>
+                            <label for="dot-22">
+                                <span class="dot twentytwo"></span>
+                                <span class="price">Cheap</span>
+                            </label>
+                            <label for="dot-23">
+                                <span class="dot twentythree"></span>
+                                <span class="price">Moderate</span>
+                            </label>
+                            <label for="dot-24">
+                                <span class="dot twentyfour"></span>
+                                <span class="price">Expensive</span>
+                            </label>
+                            <label for="dot-25">
+                                <span class="dot twentyfive"></span>
+                                <span class="price">Luxurious</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="place-details">
+                        <div class="input-box">
+                            <span class="details">Details</span>
+                            <input type="text" placeholder="Enter some more details about the place" name="" id="" required>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Add City">
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <footer></footer>
 </body>
 </html>
+
+

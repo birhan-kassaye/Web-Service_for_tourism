@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def index():
+    cities = []
     if request.args:
         city = request.args.get('city_name')
         if city:
@@ -100,6 +101,11 @@ def getsiteinfo(city, site):
 def contribute():
     return render_template("contribute.html")
 
+
+@app.route('/add_city', methods=["GET"])
+def add_city():
+    requests.post('http://0.0.0.0:5001', headers={})
+    return render_template("index.html")
 
 
 if __name__ == "__main__":

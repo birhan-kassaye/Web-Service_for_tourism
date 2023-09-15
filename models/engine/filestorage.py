@@ -1,12 +1,14 @@
 import json
 from models.basemodel import BaseModel
 from models.touristsite import TouristSite
+from models.description import Description
 from models.city import City
 
 classes = {
         'BaseModel': BaseModel, 
         'City': City,
-        'TouristSite': TouristSite
+        'TouristSite': TouristSite,
+        'Description': Description
         }
 
 class FileStorage:
@@ -48,6 +50,19 @@ class FileStorage:
             key = obj.__class__.__name__ + '.' + obj.id
             if key in self.__objects:
                 del self.__objects[key]
+
+    def close(self):
+        self.reload()
+
+
+    def get(self, cls, id):
+        if cls not in classes.values():
+            return None
+
+        all_cls = self.all(cls)
+        for value in all_cls.values():
+            if (value.id == id):
+                return value
 
 
     def reload(self):
