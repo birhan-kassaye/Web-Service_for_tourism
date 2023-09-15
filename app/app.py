@@ -102,6 +102,11 @@ def contribute():
     return render_template("contribute.html")
 
 
+@app.route('/add_city', methods=["GET"])
+def add_city():
+    requests.post('http://0.0.0.0:5001', headers={})
+    return render_template("index.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=5000)

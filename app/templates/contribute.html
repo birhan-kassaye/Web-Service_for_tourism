@@ -46,11 +46,11 @@
                         </div>
                     </div>
                     <div class="population-details">
-                        <input type="radio" name="population" id="dot-1">
-                        <input type="radio" name="population" id="dot-2">
-                        <input type="radio" name="population" id="dot-3">
-                        <input type="radio" name="population" id="dot-4">
-                        <input type="radio" name="population" id="dot-5">
+                        <input type="radio" name="population" id="dot-1" value="LESS THAN 1K">
+                        <input type="radio" name="population" id="dot-2" value="50K - 100K">
+                        <input type="radio" name="population" id="dot-3" value="100K - 250K">
+                        <input type="radio" name="population" id="dot-4" value="250K - 500K">
+                        <input type="radio" name="population" id="dot-5" value="500K - 1M">
                         <span class="population-title">Population</span>
                         <div class="category">
                             <label for="dot-1">
@@ -136,7 +136,9 @@
                         </div>
                     </div>
                     <div class="button">
-                        <input type="submit" value="Add City">
+                        <form method="get" action="/add_city">
+                            <input type="submit" value="Add City"/>
+                        </form>
                     </div>
                 </form>
             </div>
@@ -234,3 +236,5 @@
     <footer></footer>
 </body>
 </html>
+
+

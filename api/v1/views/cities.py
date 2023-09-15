@@ -79,5 +79,14 @@ def delete_city(city_id):
     storage.save()
     return jsonify({'error': 'not found'})
 
+@app_views.route('/add_city', methods=['POST'], strict_slashes=False)
+def add_city():
+    new = City()
+
+    new.name = New
+    storage.new(new)
+    storage.save()
+    return jsonify({'success': "OK"})
+
 if __name__ == '__main__':
     app_views.run(host='0.0.0.0', port=5000)
