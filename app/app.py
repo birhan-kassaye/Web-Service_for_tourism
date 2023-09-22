@@ -4,16 +4,17 @@ import requests
 
 app = Flask(__name__)
 
+
 @app.route("/", methods=["GET"])
 def index():
     cities = []
     if request.args:
         city = request.args.get('city_name')
         if city:
-            with open('static/file.json') as f:
-                data = json.load(f)
+            response = requests.get('http://0.0.0.0:5001/api/v1/all')
+            data = response.json()
 
-            for i in data.values():
+            for i in data:
                 if i['__class__'] == 'City':
                     if i['name'] == city:
                         region = i['region']
@@ -38,13 +39,13 @@ def index():
     else:
         return render_template("index.html")
 
-@app.route("/<city>", methods=["GET"])
+@app.route("/<city>", methods=["GET"], strict_slashes=False)
 def get_city_info(city):
     if city:
-        with open('static/file.json') as f:
-            data = json.load(f)
-
-        for i in data.values():
+        response = requests.get('http://0.0.0.0:5001/api/v1/all')
+        data = response.json()
+        
+        for i in data:
             if i['__class__'] == 'City':
                 if i['name'] == city: 
                     region = i['region']
@@ -72,12 +73,12 @@ def get_city_info(city):
 @app.route("/<city>/<site>", methods=["GET"])
 def getsiteinfo(city, site):
     if city and site:
-        with open('static/file.json') as f:
-            data = json.load(f)
-        for i in data.values():
+        response = requests.get('http://0.0.0.0:5001/api/v1/all')
+        data = response.json()
+        for i in data:
             if i['__class__'] == 'City':
                 if i['name'] == city:
-                    for j in data.values():
+                    for j in data:
                         if j['__class__'] == 'TouristSite':
                             if j['name'] == site:
                                 return render_template('places_specific.html',

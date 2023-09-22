@@ -1,7 +1,7 @@
 $('document').ready( function () {
    $.ajax({
     type: 'GET',
-    url: 'http://0.0.0.0:5001/api/v1/cities/',
+    url: 'http://0.0.0.0:5001/api/v1/cities',
     success: function (data) {
       const info = data;
       let names = [];

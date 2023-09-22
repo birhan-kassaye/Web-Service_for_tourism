@@ -4,7 +4,7 @@ from models.city import City
 from models.touristsite import TouristSite
 from models import storage
 from api.v1.views import app_views
-from flask import abort, jsonify, make_response, request
+from flask import abort, jsonify, make_response, request, redirect
 
 
 @app_views.route('/cities', methods=['GET'],
@@ -79,14 +79,41 @@ def delete_city(city_id):
     storage.save()
     return jsonify({'error': 'not found'})
 
-@app_views.route('/add_city', methods=['POST'], strict_slashes=False)
+@app_views.route('/add_city', methods=['GET', 'POST'], strict_slashes=False)
 def add_city():
-    new = City()
+    if request.method == 'POST':
+        new = City()
 
-    new.name = New
-    storage.new(new)
-    storage.save()
-    return jsonify({'success': "OK"})
+        new.name = request.form.get('name')
+        new.population = request.form.get('population')
+        new.region = request.form.get('region')
+        new.location = request.form.get('location')
+        storage.new(new)
+        storage.save()
+        return redirect('http://0.0.0.0:5000')
+
+@app_views.route('/add_place', methods=['POST', 'GET'], strict_slashes=False)
+def add_place():
+    if request.method == 'POST':
+        new = TouristSite()
+
+        new.name = request.form.get('place')
+        new.location = request.form.get('location')
+        
+        for i in storage.all('City').values():
+            if i.to_dict()['name'] == request.form.get('city'):
+                new.city_id = i.to_dict()['id']
+                break
+            else:
+                continue
+
+        new.description['type'] = request.form.get('type')
+        new.description['price'] = request.form.get('price')
+        new.description['detail'] = request.form.get('details')
+        storage.new(new)
+        storage.save()
+        return redirect('http://0.0.0.0:5000')
+
 
 if __name__ == '__main__':
     app_views.run(host='0.0.0.0', port=5000)
