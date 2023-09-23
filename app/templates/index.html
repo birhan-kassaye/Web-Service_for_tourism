@@ -26,37 +26,39 @@
 	    <ol></ol>
 	</nav>
     </div>
-    <section id="filters">
-        <div id="weather">
-            <label>Weather</label>
-            <input type="checkbox" class="weatheroption" name="weather" data-value="Bereha">Bereha</input>
-            <input type="checkbox" class="weatheroption" data-name="weather" data-value="Kola">Kola</input>
-            <input type="checkbox" class="weatheroption" data-name="weather" data-value="Weyna Dega">Weyna Dega</input>
-            <input type="checkbox" class="weatheroption" data-name="weather" data-value="Dega">Dega</input>
-            <input type="checkbox" class="weatheroption">Wurch</input>
-        </div>
-        <div id="population">
-            <label>Population</label>
-                <input type="checkbox" class="checkoption"></input>
-            <input type="checkbox" class="checkoption"></input>
-            <input type="checkbox" class="checkoption"></input>
-            <input type="checkbox" class="checkoption"></input>
-        </div>
-        <div id="location">
-            <label>Location</label>
-                <input type="checkbox" class="locationoption"></input>
-            <input type="checkbox" class="locationoption"></input>
-            <input type="checkbox" class="locationoption"></input>
-            <input type="checkbox"class="locationoption"></input>
-        </div>
-        <div id="region">
-            <label>Region</label>
-            <input type="checkbox" class="regionoption"></input>
-            <input type="checkbox" class="regionoption"></input>
-            <input type="checkbox" class="regionoption"></input>
-            <input type="checkbox" class="regionoption"></input>
-        </div>
-    </section>
+    <div id="filters">
+        <form action="/" method="get">
+            <div id="weather">
+                <label>Weather</label>
+                <input type="radio" class="weatheroption" name="weather" value="Bereha">Bereha</input>
+                <input type="radio" class="weatheroption" name="weather" value="Kola">Kola</input>
+                <input type="radio" class="weatheroption" name="weather" value="Weyna Dega">Weyna Dega</input>
+                <input type="radio" class="weatheroption" name="weather" value="Dega">Dega</input>
+                <input type="radio" class="weatheroption" name="weather" value="Wurch">Wurch</input>
+            </div>
+            <div id="population">
+                <label>Population</label>
+                <input type="checkbox" class="checkoption" name="population" value="50K - 100K">50K - 100K</input>
+                <input type="checkbox" class="checkoption" name="population" value="100K - 250K">100K - 250K</input>
+                <input type="checkbox" class="checkoption" name="population" value="250K - 500K">250K - 500K</input>
+                <input type="checkbox" class="checkoption" name="population" value="500K - 1M">500K - 1M</input>
+            </div>
+            <div id="location">
+                <label>Location</label>
+                    <input type="checkbox" class="locationoption" name="location"></input>
+                <input type="checkbox" class="locationoption" name="location"></input>
+                <input type="checkbox" class="locationoption" name="location"></input>
+                <input type="checkbox"class="locationoption" name="location"></input>
+            </div>
+            <div id="region">
+                <label>Region</label>
+                <input type="checkbox" class="regionoption" name="region"></input>
+                <input type="checkbox" class="regionoption" name="region"></input>
+                <input type="checkbox" class="regionoption" name="region"></input>
+                <input type="checkbox" class="regionoption" name="region"></input>
+            </div>
+        </form>
+    </div>
     <div id="results">
 	<ul></ul>
     </div>

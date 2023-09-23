@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ city }}</title>
-    <link rel="stylesheet" href="../static/styles/city_specific.css">
+    <link rel="stylesheet" href="static/styles/city_specific.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="static/script/city_specific.js"></script>
 </head>
@@ -19,7 +19,13 @@
 	<div class="container">
 		<div id="touristsites" city_id="{{ ids }}">
 		<h2>Places Available</h2>
-		<ol></ol>
+		<nav>
+			<ol>
+				{% for place in places %}
+					<li><a href="{{ '/%s/%s'%(city, place) }}">{{ place }}</a></li>
+				{% endfor %}
+			</ol>
+		</nav>
 	   </div>
 	   <div id="fullInfo">
 	       <h2>General Information</h2>

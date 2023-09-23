@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def index():
-    cities = []
+    places = []
     if request.args:
         city = request.args.get('city_name')
         if city:
@@ -21,13 +21,18 @@ def index():
                         weather = i['weather']
                         population = i['population']
                         ids = i['id']
+                        for j in data:
+                            if j['__class__'] == 'TouristSite':
+                                if j['city_id'] == ids:
+                                    places.append(j['name'])
 
                         return render_template("city_specific.html",
                                                city=city,
                                                region=region,
                                                weather=weather,
                                                population=population,
-                                               ids=ids)
+                                               ids=ids,
+                                               places=places)
                     else:
                         pass
                 else:
@@ -41,6 +46,7 @@ def index():
 
 @app.route("/<city>", methods=["GET"], strict_slashes=False)
 def get_city_info(city):
+    places = []
     if city:
         response = requests.get('http://0.0.0.0:5001/api/v1/all')
         data = response.json()
@@ -52,13 +58,18 @@ def get_city_info(city):
                     weather = i['weather']
                     population = i['population']
                     ids = i['id']
+                    for j in data:
+                            if j['__class__'] == 'TouristSite':
+                                if j['city_id'] == ids:
+                                    places.append(j['name'])
 
                     return render_template("city_specific.html", 
                                             city=city,
                                             region=region,
                                             weather=weather,
                                             population=population,
-                                            ids=ids)
+                                            ids=ids,
+                                            places=places)
                 else:
                     pass
                     
