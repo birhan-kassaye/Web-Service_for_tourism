@@ -110,6 +110,14 @@ button {
     overflow-y: scroll;
 }
 
+#all-cities nav li{
+    padding-left: 10px;
+}
+
+#all-cities nav li:hover{
+    background-color: #c88ae0;
+ }
+
 #all-cities li {
     background-color: transparent;
     padding: 10px 10px 10px 1px;

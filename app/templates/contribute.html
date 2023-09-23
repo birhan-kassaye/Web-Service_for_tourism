@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../static/styles/contribute.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="static/script/city_specific.js"></script>
+    <script src="static/script/contribute.js"></script>
     <title>Contribute</title>
 </head>
 <body>
@@ -38,11 +39,11 @@
         <div id="page-2">
             <div class="container">
                 <div class="title">City Registration</div>
-                <form action="#">
+                <form action="http://localhost:5001/api/v1/add_city" method="post">
                     <div class="city-details">
                         <div class="input-box">
                             <span class="details">Name</span>
-                            <input type="text" placeholder="Enter the name of the city" name="" id="" required>
+                            <input type="text" placeholder="Enter the name of the city" name="name" required>
                         </div>
                     </div>
                     <div class="population-details">
@@ -76,11 +77,11 @@
                         </div>
                     </div>
                     <div class="weather-details">
-                        <input type="radio" name="weather" id="dot-6">
-                        <input type="radio" name="weather" id="dot-7">
-                        <input type="radio" name="weather" id="dot-8">
-                        <input type="radio" name="weather" id="dot-9">
-                        <input type="radio" name="weather" id="dot-10">
+                        <input type="radio" name="weather" id="dot-6" value="WeynaDega">
+                        <input type="radio" name="weather" id="dot-7" value="Dega">
+                        <input type="radio" name="weather" id="dot-8" value="Kola">
+                        <input type="radio" name="weather" id="dot-9" value="Wurch">
+                        <input type="radio" name="weather" id="dot-10" value="Bereha">
                         <span class="weather-title">Weather</span>
                         <div class="category">
                             <label for="dot-6">
@@ -106,11 +107,11 @@
                         </div>
                     </div>
                     <div class="region-details">
-                        <input type="radio" name="region" id="dot-11">
-                        <input type="radio" name="region" id="dot-12">
-                        <input type="radio" name="region" id="dot-13">
-                        <input type="radio" name="region" id="dot-14">
-                        <input type="radio" name="region" id="dot-15">
+                        <input type="radio" name="region" id="dot-11" value="Afar">
+                        <input type="radio" name="region" id="dot-12" value="SNNPR">
+                        <input type="radio" name="region" id="dot-13" value="Tigray">
+                        <input type="radio" name="region" id="dot-14" value="Oromia">
+                        <input type="radio" name="region" id="dot-15" value="Amhara">
                         <span class="region-title">Region</span>
                         <div class="category">
                             <label for="dot-11">
@@ -136,9 +137,7 @@
                         </div>
                     </div>
                     <div class="button">
-                        <form method="get" action="/add_city">
                             <input type="submit" value="Add City"/>
-                        </form>
                     </div>
                 </form>
             </div>
@@ -147,25 +146,29 @@
         <div id="page-3">
             <div class="container">
                 <div class="title">Tourist Site Registration</div>
-                <form action="#">
+                <form action="http://localhost:5001/api/v1/add_place" method="post">
                     <div class="city-details">
                         <div class="input-box">
                             <span class="details">Name</span>
-                            <input type="text" placeholder="Enter the name of the place" name="" id="" required>
+                            <input type="text" placeholder="Enter the name of the place" name="place" required>
                         </div>
                     </div>
+		    <div class="city-details">
+			    <span>City</span>
+			    <select name="city"></select>
+		    </div>
                     <div class="location-details">
                         <div class="input-box">
                             <span class="details">Location</span>
-                            <input type="text" placeholder="Enter the location of the place" name="" id="" required>
+                            <input type="text" placeholder="Enter the location of the place" name="location" required>
                         </div>
                     </div>
                     <div class="type-details">
-                        <input type="radio" name="type" id="dot-16">
-                        <input type="radio" name="type" id="dot-17">
-                        <input type="radio" name="type" id="dot-18">
-                        <input type="radio" name="type" id="dot-19">
-                        <input type="radio" name="type" id="dot-20">
+                        <input type="radio" name="type" id="dot-16" value="Recreational">
+                        <input type="radio" name="type" id="dot-17" value="Educational">
+                        <input type="radio" name="type" id="dot-18" value="Historical">
+                        <input type="radio" name="type" id="dot-19" value="Natural Habitat">
+                        <input type="radio" name="type" id="dot-20" value="Cultural">
                         <span class="type-title">Type</span>
                         <div class="category">
                             <label for="dot-16">
@@ -191,11 +194,11 @@
                         </div>
                     </div>
                     <div class="price-details">
-                        <input type="radio" name="price" id="dot-21">
-                        <input type="radio" name="price" id="dot-22">
-                        <input type="radio" name="price" id="dot-23">
-                        <input type="radio" name="price" id="dot-24">
-                        <input type="radio" name="price" id="dot-25">
+                        <input type="radio" name="price" id="dot-21" value="Free">
+                        <input type="radio" name="price" id="dot-22" value="Cheap">
+                        <input type="radio" name="price" id="dot-23" value="Moderate">
+                        <input type="radio" name="price" id="dot-24" value="Expensive">
+                        <input type="radio" name="price" id="dot-25" value="Luxurious">
                         <span class="price-title">Pricing</span>
                         <div class="category">
                             <label for="dot-21">
@@ -223,11 +226,11 @@
                     <div class="place-details">
                         <div class="input-box">
                             <span class="details">Details</span>
-                            <input type="text" placeholder="Enter some more details about the place" name="" id="" required>
+                            <input type="text" placeholder="Enter some more details about the place" name="details" id="" required>
                         </div>
                     </div>
                     <div class="button">
-                        <input type="submit" value="Add City">
+                        <input type="submit" value="Add Place">
                     </div>
                 </form>
             </div>

@@ -1,15 +1,38 @@
+#filters {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height: 30%;
+   width: 50%;
+}
+
+
 #weather {
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
     position: absolute;
     left: 28%;
     width: 15%;
     padding-top: 1%;
     height: 20%;
-    flex-direction: column;
     justify-content: space-between;
    align-items: center;
 }
 
+#population{
+   display: flex;
+   flex-direction: row;
+}
+
+#location{
+   display: flex;
+   flex-direction: row;
+}
+
+#region{
+   display: flex;
+   flex-direction: row;
+}
 
 input[type="checkbox"] {
    margin-right: 5px;

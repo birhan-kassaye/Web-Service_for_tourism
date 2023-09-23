@@ -1,5 +1,5 @@
 $('document').ready( function() {
-  var interval = setInterval(checkInput, 100);
+  /*var interval = setInterval(checkInput, 100);
   let filters = {};
   function checkInput() {
     $('.checkoption').click(function() {
@@ -23,7 +23,7 @@ $('document').ready( function() {
         filters[$(this).attr('data-name')] = $(this).attr('data-value')
       }
     });
-  }
+  }*/
 
     $.getJSON('static/file.json', function (data) {
       const info = data;

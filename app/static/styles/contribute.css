@@ -251,6 +251,7 @@ form .region-details .category{
     display: flex;
     width: 80%;
     margin: 14px 0;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
