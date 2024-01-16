@@ -13,6 +13,9 @@ def index():
         if city:
             response = requests.get('http://0.0.0.0:5001/api/v1/all')
             data = response.json()
+            
+            if response.status_code == 404:
+                return
 
             for i in data:
                 if i['__class__'] == 'City':
@@ -49,29 +52,31 @@ def get_city_info(city):
     places = []
     if city:
         response = requests.get('http://0.0.0.0:5001/api/v1/all')
-        data = response.json()
         
-        for i in data:
-            if i['__class__'] == 'City':
-                if i['name'] == city: 
-                    region = i['region']
-                    weather = i['weather']
-                    population = i['population']
-                    ids = i['id']
-                    for j in data:
-                            if j['__class__'] == 'TouristSite':
-                                if j['city_id'] == ids:
-                                    places.append(j['name'])
+        data = response.json()
 
-                    return render_template("city_specific.html", 
-                                            city=city,
-                                            region=region,
-                                            weather=weather,
-                                            population=population,
-                                            ids=ids,
-                                            places=places)
-                else:
-                    pass
+        if data: 
+            for i in data:
+                if i['__class__'] == 'City':
+                    if i['name'] == city: 
+                        region = i['region']
+                        weather = i['weather']
+                        population = i['population']
+                        ids = i['id']
+                        for j in data:
+                                if j['__class__'] == 'TouristSite':
+                                    if j['city_id'] == ids:
+                                        places.append(j['name'])
+
+                        return render_template("city_specific.html", 
+                                                city=city,
+                                                region=region,
+                                                weather=weather,
+                                                population=population,
+                                                ids=ids,
+                                                places=places)
+                    else:
+                        pass
                     
             else:
                 pass

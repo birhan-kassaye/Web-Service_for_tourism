@@ -1,9 +1,17 @@
 import models
-from models.basemodel import BaseModel
+from models.basemodel import BaseModel, Base
 from models.description import Description
+from os import getenv
+from sqlalchemy import Column, Integer, String
 import json
 
-class TouristSite(BaseModel):
+class TouristSite(BaseModel, Base):
+
+    if getenv('STORAGE_TYPE') == 'db':
+        __tablename__ = 'sites'
+        name = Column(String(40), unique=True)
+        location = Column(String(100))
+        description = Column(String(150))
 
     city_id = ""
 

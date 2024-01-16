@@ -1,5 +1,4 @@
-import models
-from models.basemodel import BaseModel
+from models.basemodel import BaseModel, Base
 
 
 class Description(BaseModel):

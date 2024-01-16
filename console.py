@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import cmd
 import models
 from models.basemodel import BaseModel
@@ -94,6 +95,15 @@ class Console(cmd.Cmd):
                     obj.__dict__[k] = v
         models.storage.save()
 
+    
+    def do_delete(self, arg):
+        argl = arg.split(" ")
+        if argl[0]:
+            if argl[1]:
+                for k, v in models.storage.all().items():
+                    if v.to_dict().get('name') == argl[1]:
+                        models.storage.delete(k)
+        models.storage.save()
     
 
 if __name__ == '__main__':
