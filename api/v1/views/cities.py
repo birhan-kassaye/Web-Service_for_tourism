@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ objects that handles all default RestFul API actions for cities """
+import sys
+sys.path.append('.')
 from models.city import City
 from models.touristsite import TouristSite
 from models import storage

@@ -2,12 +2,26 @@
 """BaseModel Definition"""
 from datetime import datetime
 import models
+from sqlalchemy import Column, String, DateTime
+from sqlalchemy.ext.declarative import declarative_base
 import uuid
 
 time = "%Y-%m-%dT%H:%M:%S.%f"
 
+if models.storage_t == "db":
+    Base = declarative_base()
+else:
+    Base = object
+
+
 class BaseModel:
     """BaseModel Representation"""
+
+    if models.storage_t == "db":
+        id = Column(String(60), primary_key=True)
+        created_at = Column(DateTime, default=datetime.utcnow)
+        updated_at = Column(DateTime, default=datetime.utcnow)
+
     def __init__(self, *args, **kwargs):
         """Initialization of BaseModel instance"""
         if kwargs:
@@ -53,3 +67,10 @@ class BaseModel:
     def delete(self):
         """delete the current instance from the storage"""
         models.storage.delete(self)
+
+
+    def __repr__(self):
+        """
+        String representation of the related class
+        """
+        return "<{} {}>".format(self.__class__.__name__, self.to_dict())
