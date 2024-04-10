@@ -2,6 +2,7 @@
 """
 Defines the DBStorage class
 """
+from dotenv import load_dotenv
 from models.basemodel import Base
 from models.basemodel import BaseModel
 from models.touristsite import TouristSite
@@ -13,6 +14,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from urllib.parse import quote
 
+load_dotenv()
+
+db_user = getenv('DB_USER')
+db_pass = getenv('DB_PASS')
+db_host = getenv('DB_HOST')
+db_name = getenv('DB_DATABASE')
 
 classes = {
         'City': City,
@@ -30,7 +37,8 @@ class DBStorage:
 
     def __init__(self):
         """Instantiate a DBStorage object"""
-        self.__engine = create_engine('mysql+mysqldb://root:%s@localhost:3306/tourism_web' %quote('Igis@1994'))
+        db_url =  'mysql+mysqldb://' + db_user + ':' + db_pass + '@' + db_host + '/' + db_name
+        self.__engine = create_engine(db_url, echo=True)
 
 
     def all(self, cls=None):

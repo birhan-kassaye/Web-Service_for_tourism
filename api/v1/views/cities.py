@@ -47,27 +47,6 @@ def get_places(city_id):
 
     return jsonify(places)
 
-
-@app_views.route('/allplaces', methods=['GET'], strict_slashes=False)
-def get_all_places():
-    sites = storage.all(TouristSite)
-    places = []
-    for site in sites.values():
-        places.append(site.to_dict())
-
-    return jsonify(places)
-
-
-@app_views.route('/all', methods=['GET'], strict_slashes=False)
-def get_all():
-    allObj = storage.all()
-    allObjs = []
-    for i in allObj.values():
-        allObjs.append(i.to_dict())
-    
-    return jsonify(allObjs)
-
-
 @app_views.route('/city/<city_id>', methods=['DELETE'], strict_slashes=False)
 def delete_city(city_id):
     """
@@ -93,29 +72,3 @@ def add_city():
         storage.new(new)
         storage.save()
         return redirect('http://0.0.0.0:5000')
-
-@app_views.route('/add_place', methods=['POST', 'GET'], strict_slashes=False)
-def add_place():
-    if request.method == 'POST':
-        new = TouristSite()
-
-        new.name = request.form.get('place')
-        new.location = request.form.get('location')
-        
-        for i in storage.all('City').values():
-            if i.to_dict()['name'] == request.form.get('city'):
-                new.city_id = i.to_dict()['id']
-                break
-            else:
-                continue
-
-        new.description['type'] = request.form.get('type')
-        new.description['price'] = request.form.get('price')
-        new.description['detail'] = request.form.get('details')
-        storage.new(new)
-        storage.save()
-        return redirect('http://0.0.0.0:5000')
-
-
-if __name__ == '__main__':
-    app_views.run(host='0.0.0.0', port=5000)

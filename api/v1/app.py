@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 """ Flask Application """
+from dotenv import load_dotenv
 from views import app_views
 from os import getenv
 from flask import Flask, render_template, make_response, jsonify
+
+load_dotenv()
 
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
@@ -36,4 +39,4 @@ if __name__ == "__main__":
         host = '0.0.0.0'
     if not port:
         port = 5001
-    app.run(host=host, port=5001)
+    app.run(host=host, port=port)

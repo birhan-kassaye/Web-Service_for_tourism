@@ -2,7 +2,7 @@ import models
 from models.basemodel import BaseModel, Base
 from models.description import Description
 from os import getenv
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, String
 import json
 
 class TouristSite(BaseModel, Base):
