@@ -1,4 +1,4 @@
-# Web-Service_for_Tourism, Ethiopian cities.
+# Web-Service_for_Tourism, Ethiopian cities
 
 This project is done to get a wider knowlwdge on Python's Flask framework. The idea behind it is to simply serve a service where it displays tourist sites in specific cities of Ethiopia, It also allows users to add cities and tourist sites into the database which can make the database rich in information and can be reached where the author couldn't reach.
 
